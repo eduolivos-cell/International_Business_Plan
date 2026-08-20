@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>International Business Plan — Sesión 1: Plan de Negocios Internacionales (Teoría)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+ onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]});"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>if(!window.THREE){document.write('<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"><\/script>');}</script>
+<style>
+:root{--bg:#04040a;--cyan:#00f0ff;--magenta:#ff2ec4;--yellow:#ffe600;--green:#39ff14;--orange:#ff9500;--purple:#a855f7;--usil:#0b5cab;--gold:#c9a24b;--card:rgba(255,255,255,.05);--border:rgba(0,240,255,.25)}
+*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%}
+body{background:var(--bg);color:#eaf6ff;font-family:'Segoe UI',system-ui,Arial,sans-serif;overflow:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(1100px 600px at 82% -10%,rgba(0,240,255,.13),transparent 60%),radial-gradient(900px 520px at 8% 110%,rgba(255,46,196,.11),transparent 60%),radial-gradient(700px 420px at 50% 55%,rgba(168,85,247,.08),transparent 60%);animation:hue 14s ease-in-out infinite alternate}
+body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;background-image:radial-gradient(1.5px 1.5px at 25% 35%,rgba(0,240,255,.8) 50%,transparent 51%),radial-gradient(1.5px 1.5px at 75% 65%,rgba(255,46,196,.8) 50%,transparent 51%),radial-gradient(1.2px 1.2px at 50% 20%,rgba(255,230,0,.8) 50%,transparent 51%),radial-gradient(1.2px 1.2px at 12% 78%,rgba(57,255,20,.7) 50%,transparent 51%);background-size:340px 340px,420px 420px,260px 260px,380px 380px;animation:drift 90s linear infinite}
+@keyframes hue{to{filter:hue-rotate(40deg)}}@keyframes drift{to{background-position:340px 680px,-420px 840px,260px -520px,-380px 760px}}
+header{position:fixed;top:0;left:0;right:0;height:64px;z-index:50;display:flex;align-items:center;gap:14px;padding:0 18px;background:rgba(5,6,16,.93);border-bottom:1px solid var(--border)}
+#logoWrap{background:#fff;border-radius:10px;padding:3px 10px;display:flex;align-items:center;flex-shrink:0}#logoWrap img{height:42px;display:block}
+.brand{font-weight:800;font-size:15px;background:linear-gradient(90deg,var(--cyan),var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.head-info{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;font-size:12px}
+.chip{padding:4px 12px;border-radius:20px;border:1px solid var(--border);color:var(--cyan);background:rgba(0,240,255,.06);font-weight:600}
+.chip.doc{border-color:rgba(255,46,196,.45);color:var(--magenta);background:rgba(255,46,196,.07)}
+#progress{position:fixed;top:64px;left:0;height:3px;width:0;z-index:60;background:linear-gradient(90deg,var(--cyan),var(--magenta),var(--yellow));box-shadow:0 0 14px var(--cyan);transition:width .45s}
+#stage{position:fixed;inset:64px 0 78px 0;z-index:10}
+.slide{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .55s;overflow-y:auto;padding:28px 5vw 60px}
+.slide.active{opacity:1;pointer-events:auto}
+h1.big{font-size:clamp(28px,4.8vw,58px);line-height:1.05;font-weight:900;background:linear-gradient(90deg,var(--cyan) 10%,var(--magenta) 55%,var(--yellow) 95%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px rgba(0,240,255,.35))}
+h2.sec{font-size:clamp(22px,3.2vw,34px);font-weight:900;margin-bottom:6px;background:linear-gradient(90deg,var(--cyan),var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:#9fd8e8;font-size:15px;margin-bottom:18px;max-width:920px;line-height:1.5}
+.kicker{display:inline-block;font-size:12px;letter-spacing:3px;color:var(--yellow);border:1px solid rgba(255,230,0,.4);padding:5px 14px;border-radius:20px;margin-bottom:14px;background:rgba(255,230,0,.06);text-transform:uppercase;font-weight:700}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;backdrop-filter:blur(6px)}
+.grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}.g4{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}.g5{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.neon-c{color:var(--cyan)}.neon-m{color:var(--magenta)}.neon-y{color:var(--yellow)}.neon-g{color:var(--green)}.neon-o{color:var(--orange)}.neon-p{color:var(--purple)}
+.tag{display:inline-block;font-size:12px;padding:3px 10px;border-radius:14px;margin:3px 4px 3px 0;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05)}
+.btn{cursor:pointer;border:1px solid var(--cyan);color:var(--cyan);background:rgba(0,240,255,.07);padding:10px 22px;border-radius:10px;font-size:15px;font-weight:700;text-transform:uppercase;transition:.25s;text-decoration:none;display:inline-block}
+.btn:hover{background:rgba(0,240,255,.2);box-shadow:0 0 18px rgba(0,240,255,.5);transform:translateY(-2px)}
+.btn.mg{border-color:var(--magenta);color:var(--magenta);background:rgba(255,46,196,.07)}.btn.yl{border-color:var(--yellow);color:var(--yellow);background:rgba(255,230,0,.07)}.btn.gr{border-color:var(--green);color:var(--green);background:rgba(57,255,20,.07)}
+.btn.sm{padding:6px 14px;font-size:12.5px}.btn.active-opt{background:rgba(0,240,255,.28);box-shadow:0 0 16px rgba(0,240,255,.55)}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+input[type=range]{-webkit-appearance:none;appearance:none;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--cyan),var(--magenta));outline:none;cursor:pointer}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--yellow);border:2px solid #000;box-shadow:0 0 12px var(--yellow);cursor:pointer}
+footer{position:fixed;bottom:0;left:0;right:0;height:78px;z-index:50;display:flex;align-items:center;gap:16px;padding:0 22px;background:rgba(5,6,16,.93);border-top:1px solid var(--border)}
+#slideSlider{flex:1}#slideCounter{font-size:13px;color:#9fd8e8;min-width:64px;text-align:center;font-weight:700}
+.stat{font-size:26px;font-weight:900}.stat-lbl{font-size:11.5px;letter-spacing:1.5px;color:#8fb8c6;text-transform:uppercase}
+.tl-item{cursor:pointer;transition:.25s}.tl-item:hover{transform:translateY(-3px);box-shadow:0 0 20px rgba(0,240,255,.25)}
+canvas.view{width:100%;border:1px solid var(--border);border-radius:14px;background:rgba(0,0,10,.5)}
+.center{text-align:center}
+.note{border-left:4px solid var(--yellow);background:rgba(255,230,0,.06);padding:10px 14px;border-radius:0 10px 10px 0;font-size:13.5px;color:#f2ecc0;margin-top:12px}
+.katex{color:#fff}
+.flash .ans{display:none;margin-top:10px;border-left:3px solid var(--green);padding:8px 12px;background:rgba(57,255,20,.08);color:#c9ffd9;font-size:13.5px}
+.flash.open .ans{display:block}
+.aviso{border:2px dashed var(--magenta);background:rgba(255,46,196,.08);border-radius:14px;padding:18px;font-size:17px;font-weight:800;color:var(--magenta);text-align:center;box-shadow:0 0 24px rgba(255,46,196,.25)}
+svg{display:block;margin:0 auto}
+</style>
+</head>
+<body>
+<header>
+ <div id="logoWrap"><img src="USIL_logo.png" alt="USIL 30 años" onerror="this.onerror=null;this.style.display='none';document.getElementById('logoFallback').style.display='block';">
+  <svg id="logoFallback" viewBox="0 0 250 90" height="42" style="display:none"><text x="2" y="64" font-size="54" font-weight="700" fill="none" stroke="#c9a24b" stroke-width="2.5" font-family="Georgia,serif">30</text><circle cx="88" cy="36" r="24" fill="none" stroke="#c9a24b" stroke-width="3"/><text x="88" y="42" font-size="14" fill="#c9a24b" text-anchor="middle" font-family="Georgia,serif">años</text><text x="118" y="68" font-size="56" font-weight="800" fill="#0b5cab" font-family="Georgia,serif" font-style="italic">USIL</text></svg></div>
+ <div class="brand">⚙ INTERNATIONAL BUSINESS PLAN · TEORÍA</div>
+ <div class="head-info"><span class="chip">Sesión 1 · Plan de Negocios Internacionales</span><span class="chip doc">👷 Eduardo Olivos</span></div>
+</header>
+<div id="progress"></div>
+<div id="stage">
+
+<section class="slide active" id="s0"><div style="min-height:82%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
+ <span class="kicker">Sesión 01 · Semana 1 · 2026-II</span>
+ <h1 class="big">PLAN DE NEGOCIOS<br>INTERNACIONALES</h1>
+ <p class="sub center" style="margin-top:14px">Conocer e identificar un <b class="neon-c">planeamiento estratégico exitoso</b> para el Plan de Negocios de Exportación de una empresa.</p>
+ <div class="card"><b class="neon-y">Curso:</b> International Business Plan | <b class="neon-y">Carrera:</b> Adm. y Negocios Internacionales | <b class="neon-y">Docente:</b> Eduardo Olivos</div>
+ <div class="btnrow" style="justify-content:center;margin-top:26px"><button class="btn" onclick="goTo(1)">▶ Iniciar la clase</button></div>
+</div></section>
+
+<section class="slide" id="s1"><span class="kicker">Hoja de ruta</span><h2 class="sec">🗺 Hoja de ruta de la sesión</h2>
+ <p class="sub">Haz clic en cada bloque (avanzamos al ritmo del grupo):</p>
+ <div class="grid g4">
+  <div class="card tl-item" onclick="goTo(2)"><div class="stat neon-c">🎯</div><div class="stat-lbl">Resultado y reto</div></div>
+  <div class="card tl-item" onclick="goTo(4)"><div class="stat neon-y">📘</div><div class="stat-lbl">Definición y objetivos</div></div>
+  <div class="card tl-item" onclick="goTo(6)"><div class="stat neon-m">🌐</div><div class="stat-lbl">Plan internacional y Ruta Exportadora</div></div>
+  <div class="card tl-item" onclick="goTo(9)"><div class="stat neon-o">🌎</div><div class="stat-lbl">Nuevo entorno LATAM</div></div>
+  <div class="card tl-item" onclick="goTo(10)"><div class="stat neon-g">🚀</div><div class="stat-lbl">Potencial exportador</div></div>
+  <div class="card tl-item" onclick="goTo(11)"><div class="stat neon-p">💡</div><div class="stat-lbl">Ideas con valor y viabilidad</div></div>
+  <div class="card tl-item" onclick="goTo(15)"><div class="stat neon-c">🧊</div><div class="stat-lbl">3D y síntesis</div></div>
+  <div class="card tl-item" onclick="goTo(17)"><div class="stat neon-m">📢</div><div class="stat-lbl">Cierre</div></div>
+ </div>
+ <div class="note">💡 <b>Repasa con este archivo:</b> todas las preguntas de la evaluación salen de aquí.</div>
+</section>
+
+<section class="slide" id="s2"><span class="kicker">Momento 1 · Utilidad</span><h2 class="sec">🎯 Resultado de aprendizaje y reto</h2>
+ <div class="grid g2">
+  <div class="card"><h3 class="neon-c">Resultado de aprendizaje</h3><p style="font-size:15px;line-height:1.6;margin-top:6px">Al finalizar, el alumno es capaz de <b>conocer e identificar un planeamiento estratégico exitoso</b> para el Plan de Negocios de Exportación de una empresa.</p>
+   <h3 class="neon-m" style="margin-top:14px">Reto</h3><p style="font-size:14px;line-height:1.6;margin-top:6px">💡 Convertir una idea en <b>potencial exportador</b>: ¿qué problema resuelve, a quién y con qué valor agregado?</p></div>
+  <div class="card"><h3 class="neon-y">Reflexión desde la experiencia</h3><ul style="font-size:14px;line-height:2;padding-left:18px"><li>¿Por qué decidiste estudiar esta carrera?</li><li>¿Qué te motiva? ¿Cómo te ves en 5 años?</li><li>¿Cuál es tu mayor sueño y tu pasión?</li><li>¿Dirigiste un negocio o tienes un emprendimiento?</li></ul></div>
+ </div>
+</section>
+
+<section class="slide" id="s3"><span class="kicker">Introducción</span><h2 class="sec">🧭 De la idea al Plan de Negocios</h2>
+ <p class="sub">Emprender es complejo: el <b>Plan Comercial Global</b> determina la viabilidad, describe acciones futuras y previene escenarios de mercado. Pulsa cada paso:</p>
+ <div class="btnrow" id="ideaBtns"></div>
+ <div class="card" id="ideaInfo" style="min-height:80px"><b class="neon-y">Selecciona un paso</b>.</div>
+</section>
+
+<section class="slide" id="s4"><span class="kicker">1 · Definición</span><h2 class="sec">📘 ¿Qué es un Plan de Negocios?</h2>
+ <div class="card" style="margin-bottom:14px"><p style="font-size:15px;line-height:1.6">Es una <b class="neon-c">guía para el emprendedor</b>: documento que describe el negocio, analiza la situación del mercado y establece las <b class="neon-m">acciones futuras</b> para producción, fabricación y medición de resultados. Identifica y describe una <b>oportunidad de negocio global</b> y examina su viabilidad <b>técnica, económica y financiera</b>; es también un documento de gestión para <b>inversionistas, socios y colaboradores</b>.</p></div>
+ <div class="grid g2">
+  <div class="card flash"><b class="neon-m">¿Para qué sirve internamente?</b><button class="btn sm gr" style="margin-left:10px" onclick="this.parentNode.classList.toggle('open')">Ver</button><div class="ans">Gestionar y planificar tareas; es una fase de <b>proyección y evaluación</b> de la idea empresarial.</div></div>
+  <div class="card flash"><b class="neon-g">¿Para qué sirve externamente?</b><button class="btn sm gr" style="margin-left:10px" onclick="this.parentNode.classList.toggle('open')">Ver</button><div class="ans">Recurrir a <b>posibles inversionistas</b> para solicitar financiamiento y transmitir información a socios potenciales.</div></div>
+ </div>
+</section>
+
+<section class="slide" id="s5"><span class="kicker">1.1 · Objetivos</span><h2 class="sec">🎯 Los 10 objetivos del plan</h2>
+ <div class="grid g2">
+  <div class="card"><ol style="font-size:13.5px;line-height:1.9;padding-left:20px;color:#bfe9f5"><li>Define tipo de empresa, producto/servicio.</li><li>Determina la demanda y proyecta ventas.</li><li>Clientes potenciales e insight del consumidor.</li><li>Describe el perfil del equipo humano.</li><li>Analiza los competidores.</li></ol></div>
+  <div class="card"><ol start="6" style="font-size:13.5px;line-height:1.9;padding-left:20px;color:#bfe9f5"><li>Establece proveedores y condiciones de negociación.</li><li>Estrategias y políticas de mercadeo, venta y distribución.</li><li>Establece los costos de producción.</li><li>Evalúa fuentes y alternativas de financiamiento.</li><li>Análisis de viabilidad económica‑financiera de la inversión.</li></ol></div>
+ </div>
+</section>
+
+<section class="slide" id="s6"><span class="kicker">1.2 · Plan Internacional</span><h2 class="sec">🌐 Plan de Negocios Internacional</h2>
+ <div class="card" style="margin-bottom:14px"><p style="font-size:15px;line-height:1.6">Documento que plantea la planificación de un <b class="neon-c">nuevo modelo de negocios de exportación</b>; determina su posibilidad de <b>éxito o fracaso</b>. Describe la visión, objetivos y estrategias: <b class="neon-m">“el qué se va a hacer y cómo hacerlo”</b>.</p></div>
+ <p class="sub">Pulsa cada etapa de la <b>Ruta Exportadora</b> (exportemos.pe):</p>
+ <div class="btnrow" id="rutaBtns"></div>
+ <div class="card" id="rutaInfo" style="min-height:80px"><b class="neon-y">Selecciona una etapa</b>.</div>
+</section>
+
+<section class="slide" id="s7"><span class="kicker">1.3 · Estructura</span><h2 class="sec">🧩 Estructura del Plan Internacional</h2>
+ <div class="grid g3">
+  <div class="card center"><b class="neon-c">1</b><p style="font-size:12.5px;margin-top:4px">Resumen Ejecutivo</p></div>
+  <div class="card center"><b class="neon-c">2</b><p style="font-size:12.5px;margin-top:4px">Descripción del Modelo de Negocio</p></div>
+  <div class="card center"><b class="neon-m">3</b><p style="font-size:12.5px;margin-top:4px">Plan Estratégico</p></div>
+  <div class="card center"><b class="neon-m">4</b><p style="font-size:12.5px;margin-top:4px">Selección de mercados internacionales</p></div>
+  <div class="card center"><b class="neon-g">5</b><p style="font-size:12.5px;margin-top:4px">Atracción y Competitividad</p></div>
+  <div class="card center"><b class="neon-g">6</b><p style="font-size:12.5px;margin-top:4px">Producción</p></div>
+  <div class="card center"><b class="neon-o">7</b><p style="font-size:12.5px;margin-top:4px">Logística Internacional</p></div>
+  <div class="card center"><b class="neon-o">8</b><p style="font-size:12.5px;margin-top:4px">Estructura orgánica y Legal</p></div>
+  <div class="card center"><b class="neon-p">9</b><p style="font-size:12.5px;margin-top:4px">Evaluación Financiera</p></div>
+  <div class="card center"><b class="neon-p">10</b><p style="font-size:12.5px;margin-top:4px">Evaluación ambiental</p></div>
+  <div class="card center"><b class="neon-y">11</b><p style="font-size:12.5px;margin-top:4px">Planificación y ejecución</p></div>
+ </div>
+ <div class="note">📄 Reúne todas las acciones antes de la puesta en marcha; sirve como documento de gestión para futuros inversionistas.</div>
+</section>
+
+<section class="slide" id="s8"><span class="kicker">Modelo de negocio</span><h2 class="sec">🏗 Etapas macro</h2>
+ <div class="btnrow" id="macroBtns"></div>
+ <div class="card" id="macroInfo" style="min-height:80px"><b class="neon-y">Selecciona una etapa macro</b>.</div>
+</section>
+
+<section class="slide" id="s9"><span class="kicker">2 · Nuevo entorno LATAM</span><h2 class="sec">🌎 Normalidad → Abnormalidad → Realidad</h2>
+ <div class="btnrow">
+  <button class="btn sm active-opt" id="entB0" onclick="showEnt(0)">NORMALIDAD (10‑03‑2020)</button>
+  <button class="btn sm mg" id="entB1" onclick="showEnt(1)">ABNORMALIDAD (ABR‑DIC 2020)</button>
+  <button class="btn sm gr" id="entB2" onclick="showEnt(2)">REALIDAD</button>
+ </div>
+ <div id="entPanel"></div>
+ <div class="grid g2" style="margin-top:14px">
+  <div class="card"><canvas id="chartEnt" style="height:240px"></canvas></div>
+  <div class="card"><h3 class="neon-y">Nueva realidad</h3><ul style="font-size:13.5px;line-height:2;padding-left:18px"><li>Evolución de la industria e <b>Inteligencia Artificial</b>.</li><li>Tecnología aplicada a la agricultura (MINAGRI‑SIEA).</li><li>Medios de pago electrónicos y algoritmos.</li><li>Integración de multicanales.</li></ul></div>
+ </div>
+</section>
+
+<section class="slide" id="s10"><span class="kicker">3 · Potencial exportador</span><h2 class="sec">🚀 Factores clave</h2>
+ <p class="sub">Pulsa cada factor para convertir un producto en potencial exportador:</p>
+ <div class="btnrow" id="facBtns"></div>
+ <div class="card" id="facInfo" style="min-height:80px"><b class="neon-y">Selecciona un factor</b>.</div>
+</section>
+
+<section class="slide" id="s11"><span class="kicker">4 · Ideas con valor</span><h2 class="sec">💡 Identificación de oportunidades</h2>
+ <p class="sub">La clave: ofrecer un producto funcional que <b>resuelva un problema o necesidad</b>. Pulsa cada paso:</p>
+ <div class="btnrow" id="opoBtns"></div>
+ <div class="card" id="opoInfo" style="min-height:80px"><b class="neon-y">Selecciona un paso</b>.</div>
+ <div class="grid g3" style="margin-top:14px">
+  <div class="card flash"><b class="neon-o">Reforzar sistema inmune (COVID)</b><button class="btn sm gr" style="margin-left:10px" onclick="this.parentNode.classList.toggle('open')">Ver</button><div class="ans">Suplementos nutritivos y bebidas funcionales.</div></div>
+  <div class="card flash"><b class="neon-m">Alta obesidad en EE.UU.</b><button class="btn sm gr" style="margin-left:10px" onclick="this.parentNode.classList.toggle('open')">Ver</button><div class="ans">Bollería endulzada con stevia y app My Fitness Pal.</div></div>
+  <div class="card flash"><b class="neon-g">Calentamiento global</b><button class="btn sm gr" style="margin-left:10px" onclick="this.parentNode.classList.toggle('open')">Ver</button><div class="ans">Envases ecológicos y cargadores solares.</div></div>
+ </div>
+</section>
+
+<section class="slide" id="s12"><span class="kicker">Formulación y viabilidad</span><h2 class="sec">🧠 ¿La idea es viable?</h2>
+ <div class="grid g2">
+  <div class="card"><h3 class="neon-c">Formulación de una idea</h3><p style="font-size:14px;line-height:1.7;margin-top:6px">Producir algo <b>novedoso</b> (método o forma de pensamiento); se pueden adaptar y modificar bienes. Se usan herramientas de <b>innovación y gamificación</b>; el ingenio creativo es ser <b>disruptivo</b>.</p>
+   <div class="note">Ej.: Zapatillas y cocinas ecológicas con cuero vegetal.</div></div>
+  <div class="card"><h3 class="neon-y">Viabilidad</h3><ul style="font-size:14px;line-height:2;padding-left:18px"><li>¿Es realista? ¿Técnicamente viable?</li><li>¿Contamos con tecnología y recursos financieros?</li><li>¿Deja un buen margen de ganancia?</li></ul>
+   $$Utilidad = Ingresos - Costos$$</div>
+ </div>
+</section>
+
+<section class="slide" id="s13"><span class="kicker">Canvas 2D · Proceso</span><h2 class="sec">🧭 De la oportunidad al plan</h2>
+ <p class="sub">Mueve el <b>deslizador</b> y recorre el proceso:</p>
+ <input type="range" id="opSlider" min="0" max="7" value="0" style="width:100%;max-width:700px" oninput="drawOp(+this.value)">
+ <div class="card" id="opLabel" style="margin:10px 0;min-height:46px"></div>
+ <canvas id="opCanvas" class="view" style="height:220px"></canvas>
+</section>
+
+<section class="slide" id="s14"><span class="kicker">Apliquemos lo aprendido</span><h2 class="sec">✍ Foro individual</h2>
+ <div class="grid g2">
+  <div class="card flash"><b class="neon-c">1.</b> Investiga 2 productos nacionales y 2 internacionales que fracasaron en los últimos 5 años.<button class="btn sm gr" style="margin-left:10px" onclick="this.parentNode.classList.toggle('open')">Ver guía</button><div class="ans">Explica los motivos del fracaso (falta de estudio de mercado, mal pricing, logística, adaptación cultural, etc.).</div></div>
+  <div class="card flash"><b class="neon-m">2.</b> ¿Cuáles son los puntos críticos al elaborar un Plan de Negocios Internacionales?<button class="btn sm gr" style="margin-left:10px" onclick="this.parentNode.classList.toggle('open')">Ver guía</button><div class="ans">Selección de mercado, logística, financiamiento, viabilidad financiera y adaptación cultural/regulatoria.</div></div>
+ </div>
+</section>
+
+<section class="slide" id="s15"><span class="kicker">Three.js · 3D</span><h2 class="sec">🧊 Escalera de la Ruta Exportadora</h2>
+ <p class="sub">Cada peldaño = una etapa. Pulsa para enfocar:</p>
+ <div class="btnrow">
+  <button class="btn sm" onclick="focus3D(0)">E1 Sensibilización</button>
+  <button class="btn sm yl" onclick="focus3D(1)">E2 Fortalecimiento</button>
+  <button class="btn sm mg" onclick="focus3D(2)">E3 Capacidades</button>
+  <button class="btn sm gr" onclick="focus3D(3)">E4 Acceso mercados</button>
+ </div>
+ <canvas id="threeCanvas" class="view" style="height:320px"></canvas>
+ <div class="card" id="threeDesc" style="margin-top:12px"><b class="neon-c">Escena 3D:</b> peldaños crecientes de la Ruta Exportadora.</div>
+</section>
+
+<section class="slide" id="s16"><span class="kicker">Integremos lo aprendido</span><h2 class="sec">📈 Conclusiones</h2>
+ <div class="grid g3">
+  <div class="card"><b class="neon-c">Plan de negocios</b><p style="font-size:13px;margin-top:6px;color:#bfe9f5">Planteamiento formal de una idea con objetivos estratégicos; fase de proyección y evaluación.</p></div>
+  <div class="card"><b class="neon-m">Uso</b><p style="font-size:13px;margin-top:6px;color:#bfe9f5">Internamente gestiona y planifica; externamente atrae inversionistas y financiamiento.</p></div>
+  <div class="card"><b class="neon-g">Plan internacional</b><p style="font-size:13px;margin-top:6px;color:#bfe9f5">Modelo de negocio, demanda y selección de mercados, plan estratégico, comercialización, logística, evaluación financiera y ejecución.</p></div>
+ </div>
+ <div class="card" style="margin-top:14px"><h3 class="neon-y">Fuentes</h3><p style="font-size:13px;line-height:1.9;color:#bfe9f5">Daniels, Radebaugh & Sullivan (2018) · Czinkota & Ronkainen (2016) · Kantis (2016) · exportemos.pe · MINAGRI‑SIEA.</p></div>
+</section>
+
+<section class="slide" id="s17"><div style="min-height:80%;display:flex;flex-direction:column;justify-content:center">
+ <span class="kicker">Cierre</span><h2 class="sec">🏁 Ideas fuerza</h2>
+ <div class="grid g4" style="margin:16px 0">
+  <div class="card"><b class="neon-c">Plan</b><p style="font-size:13px;margin-top:6px;color:#bfe9f5">Guía que describe el negocio y su viabilidad.</p></div>
+  <div class="card"><b class="neon-m">Internacional</b><p style="font-size:13px;margin-top:6px;color:#bfe9f5">“Qué se va a hacer y cómo hacerlo” para exportar.</p></div>
+  <div class="card"><b class="neon-g">Oportunidad</b><p style="font-size:13px;margin-top:6px;color:#bfe9f5">Resolver un problema o necesidad con valor agregado.</p></div>
+  <div class="card"><b class="neon-y">Viabilidad</b><p style="font-size:13px;margin-top:6px;color:#bfe9f5">Realista, técnica, financiera y rentable.</p></div>
+ </div>
+ <div class="aviso" style="margin-top:26px">📢 ESTÉN ATENTOS AL INICIO DE LA EVALUACIÓN EN CLASE</div>
+ <p class="center" style="margin-top:16px;font-size:20px;font-weight:900;background:linear-gradient(90deg,var(--cyan),var(--magenta),var(--yellow));-webkit-background-clip:text;background-clip:text;color:transparent">¡MUCHAS GRACIAS! ⚙✨</p>
+</div></section>
+</div>
+
+<footer>
+ <button class="btn sm" onclick="goTo(current-1)">◀ Anterior</button>
+ <input type="range" id="slideSlider" min="0" max="17" value="0" oninput="goTo(+this.value)">
+ <button class="btn sm" onclick="goTo(current+1)">Siguiente ▶</button>
+ <span id="slideCounter">1 / 18</span>
+</footer>
+
+<script>
+const slides=[...document.querySelectorAll('.slide')];let current=0;
+const slider=document.getElementById('slideSlider');slider.max=slides.length-1;
+function goTo(i){if(i<0||i>=slides.length)return;slides[current].classList.remove('active');current=i;slides[current].classList.add('active');slides[current].scrollTop=0;slider.value=i;document.getElementById('slideCounter').textContent=(i+1)+' / '+slides.length;document.getElementById('progress').style.width=(i/(slides.length-1)*100)+'%';onSlideEnter(i);}
+document.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT'&&e.target.type!=='range')return;if(e.key==='ArrowRight')goTo(current+1);if(e.key==='ArrowLeft')goTo(current-1);});
+function makeBtns(id,infoId,data){const c=document.getElementById(id);data.forEach((d,i)=>{const b=document.createElement('button');b.className='btn sm'+(i%2?' mg':'');b.textContent=d[0];b.onclick=()=>{c.querySelectorAll('.btn').forEach(x=>x.classList.remove('active-opt'));b.classList.add('active-opt');document.getElementById(infoId).innerHTML='<b class="neon-c">'+d[0]+'</b><p style="margin-top:6px;font-size:14px;color:#d9f3fb">'+d[1]+'</p>';};c.appendChild(b);});}
+makeBtns('ideaBtns','ideaInfo',[['Idea','Surge de identificar una necesidad o problema de mercado.'],['Oportunidad','Momento oportuno para obtener rentabilidad con la idea.'],['Viabilidad','Realista, técnicamente viable, con recursos y margen.'],['Plan','Documento formal que proyecta y evalúa la iniciativa.']]);
+makeBtns('rutaBtns','rutaInfo',[['Etapa 1','Sensibilización y preparación inicial.'],['Etapa 2','Fortalecimiento empresarial.'],['Etapa 3','Desarrollo de capacidades exportadoras.'],['Etapa 4','Acceso y posicionamiento en mercados internacionales.']]);
+makeBtns('macroBtns','macroInfo',[['Inteligencia Comercial','Información de mercados y tendencias.'],['Potencial Exportador','Evaluar si el producto puede competir afuera.'],['Mercado y Marketing','Mercado objetivo, producto y plan de marketing.'],['Plan Estratégico/Org.','Estrategia y organización de la empresa.'],['Operatividad','Gestión de la operatividad exportadora.'],['Plan Financiero','Análisis y plan financiero.']]);
+makeBtns('facBtns','facInfo',[['Soluciones a problemas','Resolver problemas de clientes y de mercado.'],['I+D+ Innovación','Investigación, desarrollo e innovación.'],['Experiencia de mercado','Aprender de reacciones previas del mercado.'],['Idea anterior','Partir y mejorar una idea existente.'],['Debilidades de competencia','Aprovechar vacíos de los competidores.'],['Marco legal internacional','Cumplir normas y tratados del mercado objetivo.']]);
+makeBtns('opoBtns','opoInfo',[['Observar tendencias','Ver tendencias globales en las industrias.'],['Estudiar demanda','Analizar tamaño y crecimiento de la demanda.'],['Escuchar clientes','Atender a clientes potenciales o existentes.'],['Debilidades competencia','Detectar vacíos de la competencia.'],['Riesgos financieros','Determinar los riesgos financieros.'],['Cambios de mercado','Analizar los cambios en el mercado.']]);
+/* Entorno LATAM */
+const ents=['<div class="card"><h3 class="neon-c">NORMALIDAD (10‑03‑2020)</h3><ul style="font-size:14px;line-height:2;padding-left:18px"><li>Situación económica estable; política inestable.</li><li>Ventas tradicionales; compras on‑line al 30%.</li><li>Cliente espera ofertas; crecen empresas de servicios; captación de inversión extranjera.</li></ul></div>','<div class="card"><h3 class="neon-m">ABNORMALIDAD (ABR‑DIC 2020)</h3><ul style="font-size:14px;line-height:2;padding-left:18px"><li>Canal on‑line creció 4 veces; cambio de hábitos.</li><li>Cierre acelerado de empresas y pérdida de empleo.</li><li>Se destruye capital físico/financiero; consumidor selectivo.</li></ul></div>','<div class="card"><h3 class="neon-g">REALIDAD</h3><ul style="font-size:14px;line-height:2;padding-left:18px"><li>PBI cae 12%; crisis económica y social; retroceso de 10 años.</li><li>Se recupera 40% la venta tradicional; capitales golondrinos.</li><li>Pagos electrónicos, algoritmos y multicanales.</li></ul></div>'];
+function showEnt(i){[0,1,2].forEach(j=>document.getElementById('entB'+j).classList.toggle('active-opt',j===i));document.getElementById('entPanel').innerHTML=ents[i];}
+showEnt(0);
+let cE=null;
+function initChartEnt(){if(!window.Chart||cE)return;cE=new Chart(document.getElementById('chartEnt'),{type:'bar',data:{labels:['Compras On‑line','Ventas tradicionales'],datasets:[{label:'Normalidad (índice)',data:[30,100],backgroundColor:'rgba(0,240,255,.7)',borderColor:'#00f0ff',borderWidth:2,borderRadius:8},{label:'Abnormalidad (índice)',data:[120,40],backgroundColor:'rgba(255,46,196,.7)',borderColor:'#ff2ec4',borderWidth:2,borderRadius:8}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#d9f3fb'}}},scales:{x:{ticks:{color:'#9fd8e8'},grid:{color:'rgba(255,255,255,.06)'}},y:{beginAtZero:true,ticks:{color:'#9fd8e8'},grid:{color:'rgba(255,255,255,.08)'}}}}});}
+/* Canvas oportunidad→plan */
+const opSteps=['Paso 0 — Mueve el deslizador.','1 — Observar tendencias globales.','2 — Estudiar la demanda.','3 — Escuchar a clientes.','4 — Detectar debilidades de la competencia.','5 — Determinar riesgos financieros.','6 — Identificar la OPORTUNIDAD.','7 — Formular la idea y evaluar VIABILIDAD → PLAN ✔.'];
+const opNames=['Tendencias','Demanda','Clientes','Competencia','Riesgos','Oportunidad','Idea/Plan'];
+function drawOp(s){const cv=document.getElementById('opCanvas');const dpr=window.devicePixelRatio||1;const W=cv.clientWidth,H=220;cv.width=W*dpr;cv.height=H*dpr;const x=cv.getContext('2d');x.setTransform(dpr,0,0,dpr,0,0);x.clearRect(0,0,W,H);
+ const n=opNames.length;
+ for(let i=0;i<Math.min(s,n);i++){const px=40+(W-80)*(i/(n-1));const y=100;
+  if(i>0){const pxx=40+(W-80)*((i-1)/(n-1));x.strokeStyle='#ffe600';x.lineWidth=2;x.beginPath();x.moveTo(pxx+26,y);x.lineTo(px-26,y);x.stroke();x.fillStyle='#ffe600';x.beginPath();x.moveTo(px-26,y);x.lineTo(px-34,y-4);x.lineTo(px-34,y+4);x.closePath();x.fill();}
+  x.save();x.shadowColor='#00f0ff';x.shadowBlur=12;x.fillStyle='rgba(0,240,255,.15)';x.strokeStyle='#00f0ff';x.lineWidth=2;x.beginPath();x.arc(px,y,24,0,Math.PI*2);x.fill();x.stroke();x.restore();
+  x.fillStyle='#eaf6ff';x.font='bold 11px Segoe UI';x.textAlign='center';x.fillText((i+1),px,y+4);
+  x.fillStyle='#9fd8e8';x.font='9px Segoe UI';x.fillText(opNames[i],px,y+44);}
+ document.getElementById('opLabel').innerHTML='<b class="neon-c">▶</b> '+opSteps[s];}
+/* Three.js ruta exportadora */
+let threeReady=false,threeFocus=-1,threeMeshes=[],threeGroup=null,threeRenderer,threeScene,threeCam;
+const defs3=[{col:0xa855f7,d:'<b class="neon-p">ETAPA 1:</b> Sensibilización y preparación inicial.'},{col:0x0b5cab,d:'<b class="neon-c">ETAPA 2:</b> Fortalecimiento empresarial.'},{col:0xff2ec4,d:'<b class="neon-m">ETAPA 3:</b> Desarrollo de capacidades exportadoras.'},{col:0x00f0ff,d:'<b class="neon-c">ETAPA 4:</b> Acceso y posicionamiento en mercados internacionales.'}];
+function initThree(){if(threeReady)return;if(!window.THREE)return;
+ try{const cv=document.getElementById('threeCanvas');const r=cv.getBoundingClientRect();const w=r.width||800,h=r.height||320;
+ threeRenderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});threeRenderer.setClearColor(0x000000,0);threeRenderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));threeRenderer.setSize(w,h,false);
+ threeScene=new THREE.Scene();threeCam=new THREE.PerspectiveCamera(50,w/h,.1,100);threeCam.position.set(0,2.5,8);threeCam.lookAt(0,1,0);
+ threeScene.add(new THREE.AmbientLight(0xffffff,.85));const p1=new THREE.PointLight(0x66ccff,1.2,80);p1.position.set(8,8,8);threeScene.add(p1);
+ const grid=new THREE.GridHelper(14,14,0x1b6fb0,0x0e3a66);grid.position.y=-0.2;threeScene.add(grid);
+ threeGroup=new THREE.Group();threeScene.add(threeGroup);
+ const hs=[0.6,1.2,1.8,2.4];
+ hs.forEach((hh,i)=>{const m=new THREE.Mesh(new THREE.BoxGeometry(1.4,hh,1.4),new THREE.MeshPhongMaterial({color:defs3[i].col,emissive:defs3[i].col,emissiveIntensity:.35,shininess:90}));m.position.set((i-1.5)*1.8,hh/2,0);threeGroup.add(m);threeMeshes.push(m);});
+ let drag=false,px=0,py=0;
+ cv.addEventListener('pointerdown',e=>{drag=true;px=e.clientX;py=e.clientY;});
+ cv.addEventListener('pointermove',e=>{if(!drag)return;threeGroup.rotation.y+=(e.clientX-px)*.008;px=e.clientX;py=e.clientY;});
+ ['pointerup','pointerleave'].forEach(ev=>cv.addEventListener(ev,()=>drag=false));
+ (function anim(t){requestAnimationFrame(anim);if(!drag)threeGroup.rotation.y+=.003;
+  threeMeshes.forEach((m,i)=>{const tg=(threeFocus===i)?1.25:((threeFocus===-1)?1:.85);m.scale.lerp(new THREE.Vector3(tg,tg,tg),.08);m.material.emissiveIntensity+=(((threeFocus===i)?.75:.35)-m.material.emissiveIntensity)*.08;});
+  threeRenderer.render(threeScene,threeCam);})();
+ threeReady=true;}catch(e){}}
+function focus3D(i){threeFocus=(threeFocus===i)?-1:i;document.getElementById('threeDesc').innerHTML=threeFocus===-1?'<b class="neon-c">Escena 3D:</b> peldaños crecientes de la Ruta Exportadora.':defs3[i].d;}
+function onSlideEnter(i){const id=slides[i].id;if(id==='s9')setTimeout(initChartEnt,120);if(id==='s13')drawOp(+document.getElementById('opSlider').value);if(id==='s15')setTimeout(initThree,120);}
+addEventListener('resize',()=>{const id=slides[current].id;if(id==='s13')drawOp(+document.getElementById('opSlider').value);if(id==='s15'&&threeRenderer){const r=document.getElementById('threeCanvas').getBoundingClientRect();threeRenderer.setSize(r.width,r.height,false);threeCam.aspect=r.width/r.height;threeCam.updateProjectionMatrix();}});
+goTo(0);
+</script>
+</body>
+</html>
