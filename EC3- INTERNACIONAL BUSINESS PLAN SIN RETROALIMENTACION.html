@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evaluación 3 — International Business Plan (UCSUR)</title>
+<style>
+:root{--bg:#040a14;--cyan:#00b4ff;--magenta:#ff2ec4;--yellow:#ffe600;--green:#39ff14;--orange:#ff9500;--ucsur:#0057a8;--ucsur-light:#00a0e9;--card:rgba(255,255,255,.05);--border:rgba(0,180,255,.25)}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:#eaf6ff;font-family:'Segoe UI',system-ui,Arial,sans-serif;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;background:radial-gradient(1100px 600px at 82% -10%,rgba(0,180,255,.14),transparent 60%),radial-gradient(900px 520px at 8% 110%,rgba(0,87,168,.16),transparent 60%)}
+header{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;padding:10px 16px;background:rgba(5,10,20,.95);border-bottom:1px solid var(--border)}
+#logoWrap{background:#fff;border-radius:10px;padding:3px 10px;display:flex;align-items:center}#logoWrap img{height:40px;display:block}
+#logoFallback{display:none;background:#fff;border-radius:10px;padding:6px 14px;font-weight:900;color:var(--ucsur);font-size:18px;letter-spacing:1px}
+.brand{font-weight:800;font-size:14px;background:linear-gradient(90deg,var(--ucsur-light),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.chip{padding:4px 10px;border-radius:20px;border:1px solid var(--border);color:var(--cyan);font-size:11px;font-weight:600}
+.chip.doc{border-color:rgba(255,46,196,.45);color:var(--magenta)}
+main{position:relative;z-index:10;max-width:880px;margin:26px auto 60px;padding:0 18px}
+h2.sec{font-size:26px;font-weight:900;background:linear-gradient(90deg,var(--ucsur-light),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:12px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:14px;backdrop-filter:blur(6px)}
+.btn{cursor:pointer;border:1px solid var(--ucsur-light);color:var(--ucsur-light);background:rgba(0,160,233,.08);padding:10px 22px;border-radius:10px;font-size:15px;font-weight:700;text-transform:uppercase;transition:.25s}
+.btn:hover{background:rgba(0,160,233,.22);box-shadow:0 0 18px rgba(0,160,233,.45)}
+.btn:disabled{opacity:.35;cursor:not-allowed;box-shadow:none}
+.btn.gr{border-color:var(--green);color:var(--green);background:rgba(57,255,20,.07)}
+.btn.sm{padding:6px 14px;font-size:12px}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+input.txt{padding:11px 14px;border-radius:10px;border:1px solid var(--border);background:rgba(0,0,0,.5);color:#fff;font-size:14px;outline:none;width:100%}
+#timerDisplay{font-size:36px;font-weight:900;color:var(--green)}
+#timerDisplay.warn{color:var(--orange)}#timerDisplay.danger{color:#ff3355}
+.qbox{border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:14px 16px;margin-bottom:10px;background:rgba(255,255,255,.03)}
+.qbox .qt{font-weight:700;margin-bottom:10px;font-size:14.5px}
+.qopt{display:block;padding:8px 10px;border-radius:8px;cursor:pointer;font-size:13.5px;color:#cfeef8;border:1px solid transparent;margin-bottom:5px;transition:.2s}
+.qopt:hover{background:rgba(0,180,255,.08);border-color:rgba(0,180,255,.25)}
+.qopt input{margin-right:8px;accent-color:var(--ucsur-light)}
+.neon-g{color:var(--green)}.neon-m{color:var(--magenta)}.neon-y{color:var(--yellow)}
+.warning{border:2px dashed var(--magenta);background:rgba(255,46,196,.08);border-radius:12px;padding:12px;font-size:13px;color:#ffc0e5;margin-top:10px}
+</style>
+</head>
+<body>
+<header>
+ <div id="logoWrap"><img src="UCSUR_logo.png" alt="UCSUR" onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block';"></div>
+ <div id="logoFallback">UCSUR</div>
+ <div class="brand">🌍 EVALUACIÓN 3 · INTERNATIONAL BUSINESS PLAN</div>
+ <div style="margin-left:auto;display:flex;gap:6px"><span class="chip">10 preguntas · 1 a la vez</span><span class="chip">1 intento · 15 min</span><span class="chip doc">👷 Eduardo Olivos</span></div>
+</header>
+<main>
+ <h2 class="sec">📝 Evaluación 3 — International Business Plan</h2>
+ <div id="quizIntro" class="card">
+  <label style="font-size:12px;color:#8fb8c6;font-weight:700">APELLIDOS Y NOMBRES (en este orden)</label>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:8px 0 12px">
+   <input class="txt" id="apPaterno" placeholder="1er Apellido"><input class="txt" id="apMaterno" placeholder="2do Apellido"><input class="txt" id="nombres" placeholder="Nombres">
+  </div>
+  <p id="attemptInfo" style="font-size:13px;margin-bottom:10px"></p>
+  <ul style="font-size:13px;line-height:1.9;padding-left:18px;color:#cfeef8">
+   <li>📖 10 preguntas de análisis sobre estructura organizacional, comunicación internacional, DFI y manuales.</li>
+   <li>📄 Las preguntas se muestran <b>una por una</b> y <b>no se puede retroceder</b>.</li>
+   <li>🕑 Tiempo límite: <b class="neon-y">15:00</b>. 🔒 1 intento por alumno.</li>
+   <li>🔕 Esta evaluación <b>no muestra retroalimentación</b> ni respuestas al final; solo tu nota.</li>
+   <li>📊 Tu resultado se registra automáticamente en la hoja del curso.</li>
+  </ul>
+  <div class="warning">⚠ <b>AVISO DE INTEGRIDAD ACADÉMICA:</b> cualquier incidencia (cambiar de pestaña o ventana, copiar/cortar, clic derecho o atajos de teclado) <b>finaliza la evaluación de inmediato</b> y queda registrada junto con tu nota.</div>
+  <div class="btnrow"><button class="btn" id="btnStartQuiz" onclick="startQuiz()">🚀 Iniciar</button></div>
+  <div id="quizMsg" style="color:#ff8899;font-size:13px;font-weight:700"></div>
+ </div>
+ <div id="quizArea" style="display:none">
+  <div class="card" style="display:flex;align-items:center;gap:16px"><div id="timerDisplay">15:00</div><div><b id="quizStudent"></b><div id="progLbl" style="font-size:12px;color:#8fb8c6;margin-top:4px"></div></div></div>
+  <div id="questionBox"></div>
+  <div class="btnrow"><button class="btn gr" id="btnNext" onclick="nextQ()" disabled>➤ Siguiente</button></div>
+  <div style="font-size:11px;color:#8fb8c6"> Una vez que avances a la siguiente pregunta no podrás retroceder.</div>
+ </div>
+ <div id="quizResult" style="display:none"></div>
+</main>
+<script>
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbw92gRxVDJ-gunQgDs-xre1RjUFhcyRP0Y2VR3qJEe05qjwb0jffwNWuUU4EKXk-wZo/exec';
+const MAX=1,TLIM=900,CURSO='International Business Plan',SESION='Evaluación 3 - Intl Business Plan',KEY='ucsur_ibp3_v1';
+const Q=[
+{q:'Una startup en rápida expansión decide abandonar su estructura jerárquica tradicional y adoptar una estructura organizacional matricial. ¿Cuál de las siguientes descripciones refleja con mayor precisión la dinámica y el propósito de este tipo de configuración?',o:['La estructura matricial aplana la jerarquía, eliminando a los jefes de área y permitiendo que todos los empleados reporten directamente al cliente final sin intermediarios.','La estructura matricial se diseña en forma piramidal estricta de arriba hacia abajo, donde cada empleado tiene un supervisor y las órdenes fluyen en una sola dirección vertical.','La estructura matricial permite la coexistencia de dos tipos de diseño organizacional simultáneamente, facilitando la formación de equipos de trabajo multidisciplinarios para proyectos específicos, aunque puede generar doble reporte.','La estructura matricial se presenta en forma circular, donde las órdenes se emanan desde el centro hacia afuera, priorizando la división del trabajo sobre la colaboración entre departamentos.'],c:2},
+{q:'Al diseñar una campaña de comunicación internacional, el equipo de marketing decide no realizar una traducción literal del eslogan de la marca, sino adaptar creativamente el mensaje para conservar su intención, efecto emocional y relevancia cultural en el mercado destino. ¿Cómo se denomina este proceso estratégico y cuál es su principal beneficio?',o:['Localización SEO; su principal beneficio es mejorar el posicionamiento en los motores de búsqueda sin importar el contexto cultural del mensaje.','Estandarización promocional; su principal beneficio es reducir costos al utilizar exactamente el mismo texto en todos los mercados globales.','Deslocalización comunicativa; su principal beneficio es externalizar la creación de contenidos a agencias de bajo costo en países emergentes.','Transcreación; su principal beneficio es evitar malentendidos culturales, garantizando que el mensaje resuene con los valores y la psicología del consumidor local.'],c:3},
+{q:'Durante la etapa de embarque de una carga de snacks liofilizados, la empresa se enfrenta a diversos riesgos logísticos. Según la matriz de riesgos de la DFI, ¿cuál de las siguientes situaciones corresponde específicamente a la etapa de "Agente de Aduana" y cuál es su consecuencia más probable?',o:['Riesgo de contaminación o bioterrorismo durante el almacenamiento; la consecuencia es el rechazo inmediato de la mercancía por parte del consumidor final.','Riesgo de errores documentarios, conspiraciones o fraude en la declaración; la consecuencia probable son multas, retención de mercancías y retrasos en el despacho.','Riesgo de robo o infiltración durante el transporte terrestre; la consecuencia es el incremento de los costos de seguro y la pérdida total de la póliza de exportación.','Riesgo de averías o falta de entrega por parte de la naviera; la consecuencia es el incumplimiento contractual y la cancelación automática del Tratado de Libre Comercio.'],c:1},
+{q:'Un profesional de relaciones públicas debe gestionar la comunicación de una empresa que opera en cinco países con culturas muy distintas. Según los principios de la comunicación internacional, ¿cuál es el enfoque más efectivo para garantizar la eficacia del mensaje más allá de la simple traducción del idioma?',o:['Desarrollar una estrategia de traducción y localización que considere los estándares comunicativos, las experiencias colectivas y las tendencias de búsqueda locales (SEO multilingüe) de cada sociedad.','Utilizar un comunicado de prensa estandarizado en inglés, asumiendo que la globalización y las redes sociales han homogeneizado por completo los valores y la interpretación de los mensajes.','Delegar toda la comunicación a las redes sociales, ya que los algoritmos de las plataformas digitales se encargan automáticamente de adaptar el tono y el contenido a cada cultura local.','Enfocarse en el diseño gráfico y la estética del contenido, ya que los elementos visuales son universales y no requieren adaptación a las barreras idiomáticas o culturales.'],c:0},
+{q:'En la cadena de la Distribución Física Internacional, intervienen múltiples actores con roles específicos. ¿Cuál de las siguientes definiciones describe con mayor precisión la función del "Consignatario" en una operación de comercio exterior?',o:['Es la persona natural o jurídica que entrega su mercancía a un agente ubicado dentro del país o en el extranjero para su posterior comercialización.','Es la empresa encargada de realizar las operaciones físicas de recepción, estiba, desestiba y descarga de la mercancía en el puerto de origen o destino.','Es el funcionario gubernamental que verifica que la documentación cumpla con las normativas arancelarias y autoriza la salida legal de las mercancías del territorio aduanero.','Es la persona receptor de una mercancía, actuando como el destinatario final o su representante autorizado para recibir la carga en el país de destino.'],c:3},
+{q:'Las organizaciones utilizan diversos instrumentos metodológicos para sistematizar sus actividades. Si una empresa necesita un documento que describa normas, flujogramas de procesos, formularios de registro y sus respectivos instructivos para orientar la actividad operativa diaria, ¿qué tipo de manual debe implementar?',o:['Manual de Organización, porque detalla los objetivos de la empresa y la relación entre la función de línea y la de asesoría.','Manual de Sistemas y Procedimientos, ya que es un manual de operación que sistematiza la actividad operativa mediante la descripción de trámites y métodos de trabajo.','Manual de Políticas, porque incluye en forma escrita las guías básicas para la acción y prescribe los límites generales dentro de los cuales deben realizarse las actividades.','Manual de Funciones, porque se enfoca en la descripción de los perfiles de puesto y los requisitos académicos para la contratación de nuevo personal.'],c:1},
+{q:'Al implementar una estrategia de comunicación digital en un mercado extranjero, una empresa descubre que su contenido traducido no genera tráfico ni conversiones. Según las mejores prácticas de localización de la comunicación internacional, ¿cuál es la causa más probable y su solución recomendada?',o:['La causa es la falta de imágenes de alta resolución; la solución es contratar un fotógrafo local para reemplazar todo el contenido textual por elementos puramente visuales.','La causa es que el sitio web no está disponible las 24 horas; la solución es cerrar la página durante la noche en el país de origen para ahorrar costos de servidor.','La causa es que no se aplicó una localización SEO; la solución es contar con un experto que adapte el contenido a las tendencias de búsqueda, la intención del usuario y las métricas de posicionamiento locales.','La causa es el uso excesivo de redes sociales; la solución es reducir los canales digitales y priorizar la distribución de folletos físicos y comunicados de prensa tradicionales.'],c:2},
+{q:'Al aplicar el "filtro cultural" a una campaña promocional internacional, el equipo de marketing debe evaluar varios aspectos para evitar errores. ¿Cuál de las siguientes preguntas aborda específicamente la dimensión de "Confianza y fuentes de credibilidad" en el mercado destino?',o:['¿El público objetivo de este país valora más las recomendaciones de expertos científicos, las opiniones de influencers, las certificaciones de terceros o las reseñas de usuarios?','¿Los colores, imágenes y gestos utilizados en la campaña tienen asociaciones positivas o negativas en la cultura local del país destino?','¿El mensaje suena natural en el idioma local o parece una traducción literal y forzada que podría generar malentendidos o ofensas?','¿La campaña enfatiza valores de individualismo y logro personal, o por el contrario, resalta la armonía familiar, la tradición y el colectivismo?'],c:0},
+{q:'En el flujo de las mercancías en el comercio internacional, la etapa de almacenamiento presenta riesgos y actores específicos. ¿Qué función cumple un "Depósito Temporal" o "Terminal de Almacenamiento" en el contexto de la DFI?',o:['Es el lugar donde el exportador fabrica el producto y lo empaqueta antes de ser recogido por el transportista terrestre para su traslado al puerto.','Es la oficina virtual donde el agente de aduana revisa los documentos digitales sin necesidad de que la carga física llegue a un recinto portuario o aeroportuario.','Es el centro de distribución final en el país de destino donde el consumidor minorista recoge personalmente la mercancía sin intervención de intermediarios logísticos.','Es una instalación autorizada donde la mercadería permanece bajo control aduanero por un tiempo limitado antes de su nacionalización o reembarque, mitigando riesgos de infiltración o falta de entrega.'],c:3},
+{q:'Una empresa de tecnología decide reorganizar su estructura para fomentar la innovación. Si optan por un "Sistema Funcional", ¿cómo se esperaría que esté diseñada y operada esta estructura según la teoría organizacional?',o:['Se organiza en torno a procesos en lugar de tareas, aplanando la jerarquía y utilizando equipos multidisciplinarios que reportan simultáneamente a un gerente de proyecto y a un jefe funcional.','Se diseña en forma piramidal para dividir el trabajo y establecer especialización, de modo que cada persona ejecute el menor número de funciones posibles bajo una cadena de mando vertical estricta.','Se presenta en forma circular, donde el cliente está en el centro y las órdenes pueden emanar de diferentes niveles de la organización, promoviendo la descentralización total.','Se basa en la autogestión completa de los empleados, eliminando los departamentos funcionales y permitiendo que cada trabajador decida sus propias tareas sin supervisión alguna.'],c:1}];
+let act=false,tLeft=TLIM,tInt=null,rev=[],score=0,incFlag=0,idx=0,answers=[];
+const $=id=>document.getElementById(id);
+function fullName(){const p=$('apPaterno').value.trim(),m=$('apMaterno').value.trim(),n=$('nombres').value.trim();return((p+' '+m).trim()+(n?', '+n:''));}
+function okName(){return $('apPaterno').value.trim().length>=2&&$('nombres').value.trim().length>=2;}
+function nKey(){return fullName().toLowerCase().replace(/[^a-z0-9ñ]+/gi,'_');}
+function gAtt(){try{return parseInt(localStorage.getItem(KEY+'_a_'+nKey())||'0')||0}catch(e){return 0}}
+function fmt(s){return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
+function updateAttemptInfo(){
+ const btn=$('btnStartQuiz');
+ if(!okName()){$('attemptInfo').innerHTML='🔢 El intento se controla por alumno: completa <b>1er apellido</b> y <b>nombres</b>.';btn.disabled=false;$('quizMsg').textContent='';return;}
+ const used=gAtt(),left=MAX-used;
+ $('attemptInfo').innerHTML='🔢 Intentos registrados: '+used+'/'+MAX+' · Disponibles: <b style="color:var(--cyan)">'+left+'</b>';
+ if(left<=0){btn.disabled=true;$('quizMsg').textContent='🔒 Ya se registró un intento para este alumno; no dispone de intentos adicionales.';}
+ else{btn.disabled=false;$('quizMsg').textContent='';}
+}
+['apPaterno','apMaterno','nombres'].forEach(id=>$(id).addEventListener('input',updateAttemptInfo));
+updateAttemptInfo();
+function startQuiz(){
+ if(!okName()){$('quizMsg').textContent='⚠ Escribe tu 1er apellido y tus nombres.';return;}
+ if(gAtt()>=MAX){$('quizMsg').textContent='🔒 Ya se registró un intento para este alumno; no dispone de intentos adicionales.';return;}
+ act=true;tLeft=TLIM;idx=0;answers=new Array(Q.length).fill(-1);incFlag=0;
+ $('quizIntro').style.display='none';$('quizResult').style.display='none';$('quizArea').style.display='block';
+ $('quizStudent').textContent='Alumno(a): '+fullName();
+ renderQ();
+ $('timerDisplay').textContent=fmt(TLIM);
+ tInt=setInterval(()=>{tLeft--;$('timerDisplay').textContent=fmt(tLeft);$('timerDisplay').className=tLeft<=60?'danger':(tLeft<=180?'warn':'');if(tLeft<=0){clearInterval(tInt);submitQuiz(true,'TIEMPO AGOTADO');}},1000);
+}
+function renderQ(){
+ const q=Q[idx];
+ $('progLbl').textContent='Pregunta '+(idx+1)+' de '+Q.length+' · Sin retroceso';
+ $('questionBox').innerHTML='<div class="qbox"><div class="qt">'+(idx+1)+'. '+q.q+'</div>'+q.o.map((o,j)=>'<label class="qopt"><input type="radio" name="qcur" value="'+j+'" onchange="document.getElementById(\'btnNext\').disabled=false">'+String.fromCharCode(65+j)+') '+o+'</label>').join('')+'</div>';
+ const btn=$('btnNext');btn.disabled=true;btn.textContent=(idx===Q.length-1)?'✔ Entregar':'➤ Siguiente';
+}
+function nextQ(){
+ const s=document.querySelector('input[name="qcur"]:checked');
+ answers[idx]=s?+s.value:-1;
+ if(idx===Q.length-1){submitQuiz(false);}else{idx++;renderQ();}
+}
+function incident(reason){if(!act)return;incFlag=1;submitQuiz(true,reason);}
+document.addEventListener('visibilitychange',()=>{if(act&&document.hidden)incident('CAMBIO DE PANTALLA');});
+window.addEventListener('blur',()=>{if(act)incident('CAMBIO DE PESTAÑA / VENTANA');});
+document.addEventListener('copy',e=>{if(act){e.preventDefault();incident('INTENTO DE COPIADO');}});
+document.addEventListener('cut',e=>{if(act){e.preventDefault();incident('INTENTO DE CORTE');}});
+document.addEventListener('contextmenu',e=>{if(act){e.preventDefault();incident('MENÚ CONTEXTUAL');}});
+document.addEventListener('keydown',e=>{if(act&&((e.ctrlKey&&['c','x','a','p','s','u'].includes(e.key.toLowerCase()))||(e.key==='F12')||(e.ctrlKey&&e.shiftKey&&['I','J','C'].includes(e.key)))){e.preventDefault();incident('ATAJO DE TECLADO');}});
+function submitQuiz(auto,reason){if(!act&&auto===false)return;act=false;clearInterval(tInt);
+ score=0;rev=[];
+ Q.forEach((q,i)=>{const v=answers[i]!==undefined?answers[i]:-1;const ok=v===q.c;if(ok)score++;rev.push({i:i+1,ok});});
+ try{localStorage.setItem(KEY+'_a_'+nKey(),'1')}catch(e){}
+ const name=fullName(),pct=Math.round(score/Q.length*100),ap=score>=6,used=TLIM-Math.max(tLeft,0),fecha=new Date().toLocaleString('es-PE');
+ const inc=auto?(reason||'TIEMPO AGOTADO'):'ENTREGA NORMAL';
+ const payload={_subject:'Evaluación 3 Intl Business Plan UCSUR — '+name,Curso:CURSO,Sesion:SESION,Alumno:name,Nota:score,Porcentaje:pct+'%',Estado:ap?'APROBADO':'DESAPROBADO',Intento:'1 de 1',Tiempo_empleado:fmt(used)+' de 15:00',Fecha:fecha,Incidencia:inc,Incidencias_numero:incFlag,Detalle:rev.map(r=>'P'+r.i+(r.ok?'OK':'ERROR')).join(' ')};
+ fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)}).catch(()=>{});
+ $('quizArea').style.display='none';
+ let h='<div class="card"><h3 class="'+(ap?'neon-g':'neon-m')+'" style="font-size:22px">'+(ap?'✅':'❌')+' Finalizada'+(inc!=='ENTREGA NORMAL'?' 🚫 '+inc:'')+'</h3><p><b>Alumno(a):</b> '+name+'</p><div style="font-size:44px;font-weight:900;color:'+(ap?'var(--green)':'var(--magenta)')+'">'+score+' / '+Q.length+'</div><p class="'+(ap?'neon-g':'neon-m')+'" style="font-weight:800">'+pct+'% — '+(ap?'APROBADO':'DESAPROBADO')+'</p><p style="font-size:12px;color:#8fb8c6">📨 Registrado en la hoja del curso. 🔒 Intento consumido.</p><p style="font-size:12px;color:#8fb8c6;margin-top:6px">🔕 Esta evaluación no muestra retroalimentación ni respuestas correctas.</p></div>';
+ const r=$('quizResult');r.innerHTML=h;r.style.display='block';window.scrollTo(0,0);updateAttemptInfo();}
+</script>
+</body>
+</html>
